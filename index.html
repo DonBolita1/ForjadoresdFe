@@ -1,24 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Detector de Acordes</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Transpositor de Acordes</title>
+
+<style>
+  body {
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  textarea {
+    width: 100%;
+    height: 260px;
+    background: #1e1e1e;
+    color: white;
+    font-family: monospace;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #444;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #4caf50;
+    color: white;
+  }
+</style>
 </head>
+
 <body>
 
-  <h1>🎸 Detector de Acordes</h1>
-  <p>Escribe la letra con acordes y la página los reconocerá automáticamente.</p>
+<h2>🎸 Transpositor de Acordes</h2>
 
-  <textarea id="input" placeholder="Ejemplo:
-G      D       Em
-Quiero verte otra vez
-C      G        D
-Y cantar sin pensar"></textarea>
+<textarea id="input">
+C   G   Am   F
+Cuando sale el sol
+ Dm  G   C   Am
+Y todo brilla más
+</textarea>
 
-  <h2>Resultado:</h2>
-  <div id="output"></div>
+<br>
 
-  <script src="script.js"></script>
+<button id="up">⬆ Subir tono</button>
+<button id="down">⬇ Bajar tono</button>
+
+<script>
+const input = document.getElementById("input");
+const upBtn = document.getElementById("up");
+const downBtn = document.getElementById("down");
+
+const notes = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+
+function transpose(step) {
+  let text = input.value;
+  let words = text.split(" ");
+
+
+  for (let i = 0; i < words.length; i++) {
+    //if (words[i+1]<>)
+    words[i] = transposeChord(words[i], step);
+    
+  }
+
+  input.value = words.join(" ");
+}
+
+function transposeChord(word, step) {
+  if (word.length === 0) return word;
+
+  let root = word[0].toUpperCase(); 
+ 
+  if (!"ABCDEFG".includes(root)) return word;
+    if (word.length > 3) return word; // evita palabras largas
+   //if (word != 'el'){}
+  
+  let accidental = "";
+  let index = 1;
+
+  if (word[index] === "#" || word[index] === "b") {
+    accidental = word[index];
+    index++;
+  }
+
+  let suffix = word.slice(index);
+  let note = root + accidental;
+
+  let noteIndex = notes.indexOf(note.replace("b", "#"));
+
+  if (noteIndex === -1){
+    return word;
+  } 
+
+  let newIndex = (noteIndex + step + notes.length) % notes.length;
+  
+  return notes[newIndex] + suffix;
+ 
+}
+
+
+upBtn.addEventListener("click", () => transpose(1));
+downBtn.addEventListener("click", () => transpose(-1) , leerTexto);
+</script>
+
 </body>
 </html>
