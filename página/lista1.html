@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guardar Canciones</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-white p-4">
+
+<div class="container">
+  
+  <h2  class="mb-4"  ><link rel="stylesheet" href="index.html">🎵 Agregar Canción</h2>
+
+  <form id="songForm" class="mb-4">
+    <div class="mb-3">
+      <label class="form-label">Título</label>
+      <input type="text" class="form-control" id="titulo" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Canción</label>
+      <textarea class="form-control" id="cancion" rows="5" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-success">Guardar</button>
+  </form>
+
+  <h4>📦 JSON Guardado:</h4>
+  <pre id="resultado" class="bg-black p-3 rounded"></pre>
+</div>
+
+<script>
+
+// 🔹 Cargar desde LocalStorage si existe
+let canciones = JSON.parse(localStorage.getItem("canciones")) || [];
+
+// 🔹 Mostrar al iniciar
+mostrarJSON();
+
+document.getElementById("songForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const titulo = document.getElementById("titulo").value;
+  const cancion = document.getElementById("cancion").value;
+
+  const nuevaCancion = {
+    id: canciones.length + 1,
+    titulo: titulo,
+    letra: cancion
+  };
+
+  canciones.push(nuevaCancion);
+
+  // 🔥 Guardar en LocalStorage
+  localStorage.setItem("canciones", JSON.stringify(canciones));
+
+  mostrarJSON();
+
+  this.reset();
+});
+
+function mostrarJSON() {
+  document.getElementById("resultado").textContent =
+    JSON.stringify(canciones, null, 2);
+}
+
+</script>
+
+</body>
+</html>
