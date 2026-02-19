@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cancionero Católico</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.6) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 120px;
+            padding-bottom: 80px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            backdrop-filter: blur(10px);
+            color: white;
+            border-radius: 15px;
+        }
+
+        .accordion-button {
+            background: rgba(255,255,255,0.08);
+            color: white;
+            font-weight: 600;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: rgba(255,75,43,0.2);
+            color: white;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+
+        .accordion-item {
+            background: transparent;
+            border: none;
+        }
+
+        .song-textarea {
+            background: rgba(0, 0, 0, 0.6);
+            border: none;
+            color: white;
+            font-family: "Courier New", monospace;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            resize: none;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .song-textarea:focus {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            box-shadow: 0 0 15px rgba(255, 75, 43, 0.4);
+            outline: none;
+        }
+
+        footer {
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">🎵 Cancionero Católico 🎵</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+
+        <h1 class="display-4 fw-bold text-center">Forjadores de Fe</h1>
+        <p class="lead text-center mb-5">Misa</p>
+
+        <div class="mx-auto" style="max-width: 900px;">
+
+            <div class="accordion" id="accordionSongs">
+
+                <!-- CANCIÓN 1 -->
+                <div class="card mb-4 shadow-lg">
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#song1">
+                                🎵 Venimos Hoy a Tu Altar
+                            </button>
+                        </h2>
+
+                        <div id="song1" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionSongs">
+                            <div class="accordion-body">
+
+                                <textarea class="form-control song-textarea" rows="18">
+G                  Bm    
+VENIMOS HOY A TU ALTAR
+C            D 
+A CANTARTE SEÑOR
+C                   G  
+PUES TU ERES LA ALEGRÍA 
+D7             G  
+DE NUESTRO CORAZÓN.
+
+Tu hiciste los Cielos, 
+los llenas de estrellas, 
+de Luz y color.
+Tu pintaste la aurora, 
+hiciste las nubes 
+las puestas del sol.
+
+Tu creaste la risa, 
+la paz y la dicha, 
+la felicidad
+Tu al darnos la vida. 
+nos das Tu riqueza
+Tu eterna amistad.
+                                </textarea>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CANCIÓN 2 -->
+                <div class="card mb-4 shadow-lg">
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#song2">
+                                🎶 Ten Piedad
+                            </button>
+                        </h2>
+
+                        <div id="song2" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionSongs">
+                            <div class="accordion-body">
+
+                                <textarea class="form-control song-textarea" rows="26">
+   Em          B7      Em
+  Señor ten piedad de nosotros
+    Em         B7        Em
+  (Señor ten piedad de nosotros)
+       Am        D7         G    Em
+  de nosotros Señor ten piedad
+       Am        B7        Em
+  de nosotros Señor ten piedad
+
+    G           B7       Em
+  Cristo ten piedad de nosotros
+     G            B7      Em    E7
+  (Cristo ten piedad de nosotros)
+       Am       D7         G     Em
+  de nosotros señor ten piedad
+       Am        B7         Em
+  de nosotros señor ten piedad
+
+   Em          B7      Em
+  Señor ten piedad de nosotros
+    Em         B7        Em
+  (Señor ten piedad de nosotros)
+       Am        D7         G    Em
+  de nosotros Señor ten piedad
+       Am        B7        Em
+  de nosotros Señor ten piedad
+                                </textarea>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+ <!-- CANCIÓN 2 -->
+                <div class="card mb-4 shadow-lg">
+                    <div class="accordion-item">
+
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#song2">
+                                🎶 Otra Canción
+                            </button>
+                        </h2>
+
+                        <div id="song2" class="accordion-collapse collapse"
+                             data-bs-parent="#accordionSongs">
+                            <div class="accordion-body">
+
+                                <textarea class="form-control song-textarea" rows="8">
+   Em          B7      Em
+  Señor ten piedad de nosotros
+      B7        Em        E7
+  (Señor ten piedad de nosotros)
+       Am        D7         G    Em
+  de nosotros Señor ten piedad
+       Am        B7        Em
+  de nosotros Señor ten piedad
+
+    G           B7       Em
+  Cristo ten piedad de nosotros
+     G            B7      Em    E7
+  (Cristo ten piedad de nosotros)
+       Am       D7         G     Em
+  de nosotros señor ten piedad
+       Am        B7         Em
+  de nosotros señor ten piedad
+
+Em             B7           Em
+  Señor ten piedad de nosotros...
+                                </textarea>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    © 2026 Forjadores de Fe
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
