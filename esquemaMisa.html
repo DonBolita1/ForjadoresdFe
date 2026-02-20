@@ -1,139 +1,169 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Cancionero Católico</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Cancionero Católico</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: white;
-            scroll-behavior: smooth;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+}
 
-        .navbar {
-            background: rgba(0, 0, 0, 0.6) !important;
-            backdrop-filter: blur(10px);
-        }
+.navbar {
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(10px);
+}
 
-        .hero {
-            min-height: 100vh;
-            padding-top: 120px;
-            padding-bottom: 80px;
-        }
+.hero {
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 80px;
+}
 
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
-            backdrop-filter: blur(10px);
-            color: white;
-            border-radius: 15px;
-        }
+.card {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    backdrop-filter: blur(10px);
+    color: white;
+    border-radius: 15px;
+}
 
-        .accordion-button {
-            background: rgba(255,255,255,0.08);
-            color: white;
-            font-weight: 600;
-        }
+.accordion-button {
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-weight: 600;
+}
 
-        .accordion-button:not(.collapsed) {
-            background: rgba(255,75,43,0.2);
-            color: white;
-        }
+.accordion-button:not(.collapsed) {
+    background: rgba(255,75,43,0.2);
+    color: white;
+}
 
-        .accordion-button:focus {
-            box-shadow: none;
-        }
+.accordion-button:focus {
+    box-shadow: none;
+}
 
-        .accordion-item {
-            background: transparent;
-            border: none;
-        }
+.accordion-item {
+    background: transparent;
+    border: none;
+}
 
-        .song-textarea {
-            background: rgba(0, 0, 0, 0.6);
-            border: none;
-            color: white;
-            font-family: "Courier New", monospace;
-            font-size: 1.3rem;
-            line-height: 1.6;
-            resize: none;
-            padding: 25px;
-            border-radius: 12px;
-        }
+.accordion-body {
+    padding: 15px;
+}
 
-        .song-textarea:focus {
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            box-shadow: 0 0 15px rgba(255, 75, 43, 0.4);
-            outline: none;
-        }
+/* 🔥 NUEVO ESTILO PARA PRE */
+.song-box {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 12px;
+    padding: 20px;
+    font-family: "Courier New", monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre;
+    overflow-x: auto;
+    color: white;
+}
 
-        footer {
-            background: rgba(0,0,0,0.5);
-            padding: 20px;
-            text-align: center;
-        }
-    </style>
+/* Ajuste móvil */
+@media (max-width: 576px) {
+    .song-box {
+        font-size: 0.85rem;
+        padding: 15px;
+    }
+}
+
+footer {
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    text-align: center;
+}
+</style>
 </head>
 <body>
-
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="#">🎵 Cancionero Católico 🎵</a>
+        <a class="navbar-brand fw-bold" href="">🎵 Cancionero Catolico 🎵</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="lista.html">Canciones</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="schedule/fb.html">Editor</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="esquemaMisa.html">Misa</a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-    <div class="container">
+<div class="container">
 
-        <h1 class="display-4 fw-bold text-center">Forjadores de Fe</h1>
-        <p class="lead text-center mb-5">Misa</p>
+<h1 class="display-5 fw-bold text-center" >Forjadores de Fe</h1>
+<p class="lead text-center mb-5" >Misa</p>
 
-        <div class="mx-auto" style="max-width: 900px;">
+<div class="mx-auto" style="max-width: 900px;">
 
-            <div class="accordion" id="accordionSongs">
+<div class="accordion" id="accordionSongs">
 
-                <!-- CANCIÓN 1 -->
-                <div class="card mb-4 shadow-lg">
-                    <div class="accordion-item">
+<!-- CANCIÓN 1 -->
+<div class="card mb-4 shadow-lg">
+<div class="accordion-item">
 
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#song1">
-                                🎵 Venimos Hoy a Tu Altar
-                            </button>
-                        </h2>
+<h2 class="accordion-header">
+<button class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#song1">
+🎵 Venimos Hoy a Tu Altar
+</button>
+</h2>
 
-                        <div id="song1" class="accordion-collapse collapse"
-                             data-bs-parent="#accordionSongs">
-                            <div class="accordion-body">
+<div id="song1" class="accordion-collapse collapse"
+     data-bs-parent="#accordionSongs">
+<div class="accordion-body">
 
-                                <textarea class="form-control song-textarea" rows="18">
+<pre class="song-box">
+Coro:
 G                  Bm    
 VENIMOS HOY A TU ALTAR
-C            D 
+      C      D 
 A CANTARTE SEÑOR
-C                   G  
+      C             G  
 PUES TU ERES LA ALEGRÍA 
 D7             G  
 DE NUESTRO CORAZÓN.
 
+G               Bm  
 Tu hiciste los Cielos, 
+                 C   
 los llenas de estrellas, 
+          D 
 de Luz y color.
+
+G               Bm  
 Tu pintaste la aurora, 
+             C  
 hiciste las nubes 
+                D
 las puestas del sol.
 
 Tu creaste la risa, 
@@ -142,35 +172,35 @@ la felicidad
 Tu al darnos la vida. 
 nos das Tu riqueza
 Tu eterna amistad.
-                                </textarea>
 
-                            </div>
-                        </div>
+</pre>
 
-                    </div>
-                </div>
+</div>
+</div>
+</div>
+</div>
 
-                <!-- CANCIÓN 2 -->
-                <div class="card mb-4 shadow-lg">
-                    <div class="accordion-item">
+<!-- CANCIÓN 2 -->
+<div class="card mb-4 shadow-lg">
+<div class="accordion-item">
 
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#song2">
-                                🎶 Ten Piedad
-                            </button>
-                        </h2>
+<h2 class="accordion-header">
+<button class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#song2">
+🎶 Señor Ten Piedad
+</button>
+</h2>
 
-                        <div id="song2" class="accordion-collapse collapse"
-                             data-bs-parent="#accordionSongs">
-                            <div class="accordion-body">
+<div id="song2" class="accordion-collapse collapse"
+     data-bs-parent="#accordionSongs">
+<div class="accordion-body">
 
-                                <textarea class="form-control song-textarea" rows="26">
-   Em          B7      Em
+<pre class="song-box">
+ Em          B7      Em
   Señor ten piedad de nosotros
-    Em         B7        Em
+    Em          B7      Em     E7
   (Señor ten piedad de nosotros)
        Am        D7         G    Em
   de nosotros Señor ten piedad
@@ -186,75 +216,361 @@ Tu eterna amistad.
        Am        B7         Em
   de nosotros señor ten piedad
 
-   Em          B7      Em
+ Em          B7      Em
   Señor ten piedad de nosotros
-    Em         B7        Em
+    Em          B7      Em     E7
   (Señor ten piedad de nosotros)
        Am        D7         G    Em
   de nosotros Señor ten piedad
        Am        B7        Em
-  de nosotros Señor ten piedad
-                                </textarea>
+  de nosotros Señor ten piedad 
 
-                            </div>
-                        </div>
+</pre>
 
-                    </div>
-                </div>
- <!-- CANCIÓN 2 -->
-                <div class="card mb-4 shadow-lg">
-                    <div class="accordion-item">
+</div>
+</div>
+</div>
+</div>
 
-                        <h2 class="accordion-header">
-                            <button class="accordion-button collapsed"
-                                    type="button"
-                                    data-bs-toggle="collapse"
-                                    data-bs-target="#song2">
-                                🎶 Otra Canción
-                            </button>
-                        </h2>
+<!-- CANCIÓN 3 -->
+<div class="card mb-4 shadow-lg">
+<div class="accordion-item">
 
-                        <div id="song2" class="accordion-collapse collapse"
-                             data-bs-parent="#accordionSongs">
-                            <div class="accordion-body">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#song3">
+🎶 Honor y Gloria a Ti Señor Jesús
+</button>
+</h2>
 
-                                <textarea class="form-control song-textarea" rows="8">
-   Em          B7      Em
-  Señor ten piedad de nosotros
-      B7        Em        E7
-  (Señor ten piedad de nosotros)
-       Am        D7         G    Em
-  de nosotros Señor ten piedad
-       Am        B7        Em
-  de nosotros Señor ten piedad
+<div id="song3" class="accordion-collapse collapse"
+     data-bs-parent="#accordionSongs">
+<div class="accordion-body">
 
-    G           B7       Em
-  Cristo ten piedad de nosotros
-     G            B7      Em    E7
-  (Cristo ten piedad de nosotros)
-       Am       D7         G     Em
-  de nosotros señor ten piedad
-       Am        B7         Em
-  de nosotros señor ten piedad
+<pre class="song-box">
+  C                 Am   Dm     G
+   Honor y Gloria a Ti Señor Jesús
+</pre>
 
-Em             B7           Em
-  Señor ten piedad de nosotros...
-                                </textarea>
+</div>
+</div>
+</div>
+</div>
+<!-- CANCIÓN 1 -->
+<div class="card mb-4 shadow-lg">
+<div class="accordion-item">
 
-                            </div>
-                        </div>
+<h2 class="accordion-header">
+<button class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#song4">
+🎵 Ofertorio
+</button>
+</h2>
 
-                    </div>
-                </div>
-            </div>
+<div id="song4" class="accordion-collapse collapse"
+     data-bs-parent="#accordionSongs">
+<div class="accordion-body">
 
-        </div>
+<pre class="song-box">
+C       G                  Am 
+Hemos entregado nuestras vidas al señor,
+F                  G                C  G  
+no hay mayor bendición que ser de él.
 
-    </div>
+C      G                   Am 
+Hemos entregado nuestras vidas al señor,
+F               G            C   G   F 
+y él ahora nos da su vida eterna.
+
+
+coro:
+Am                      F          G  
+Bendito seas señor, por este pan,
+G                           C         G  
+Fruto de la tierra y del trabajo del hombre.
+
+Am                      F 
+Bendito seas señor por este vino,
+G                          C        G  
+Que hemos recibido de tu amor y bondad.
+
+
+C        G                 Am            F               C  G  
+Y ahora señor te presentamos el pan y el vino que tú convertirás
+C                            Am 
+En el cuerpo y sangre de tu hijo Jesús
+F              G             C  G   F 
+Pan de vida y bebida de salvación.
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+<!-- CANCIÓN 1 -->
+<div class="card mb-4 shadow-lg">
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+<button class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#song5">
+🎵 Padre Nuestro
+</button>
+</h2>
+
+<div id="song5" class="accordion-collapse collapse"
+     data-bs-parent="#accordionSongs">
+<div class="accordion-body">
+
+<pre class="song-box">
+A
+Padre Nuestro,
+                 F#m
+que estas en el cielo
+       Bm
+santificado,
+         E
+sea tu nombre.
+A
+Venganos,(venganos)
+          F#m
+venga tu reino(venga tu reino)
+    Bm   
+y hagase,
+       E
+tu voluntad.
+            A
+Asi en la tierra,
+            F#m
+como en el cielo
+       Bm
+danos hoy nuestro pan,
+         E
+de cada dia.
+
+     A
+Y perdona,
+           F#m
+nuestras ofensas
+        Bm
+como nosotros,
+    E
+perdonamos.
+   A
+A los,(a los)
+           F#m
+que nos ofenden(que nos ofenden)
+         Bm       
+no nos dejes caer,
+           E
+en la tentacion.
+
+          A
+Padre Nuestro,
+         F#m
+Padre Nuestro,
+      Bm D  E
+libranoooooos,
+        F  G   A
+de todo maaaaaal.
+
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+<!-- CANCIÓN 1 -->
+<div class="card mb-4 shadow-lg">
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+<button class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#song6">
+🎵 Comunion 
+</button>
+</h2>
+
+<div id="song6" class="accordion-collapse collapse"
+     data-bs-parent="#accordionSongs">
+<div class="accordion-body">
+
+<pre class="song-box"  style="font-size: 0.65rem;">
+
+      D                 A                   Bm
+De la mesa y sobre la patena vino el pan de vida
+         D               A                Bm
+junto al cáliz y bajo la palia su sangre inmortal
+      D                  A                  Bm
+comulguemos de su cuerpo santo y su sangre divina
+     G             A                Bm
+bendecidos y purificados hoy en el altar.
+
+          G        A        F#m         Bm
+Veo en el pan claramente el rostro de Jesús
+         G     A           D  D7
+el me da paz y vida a plenitud
+        G       A           F#m          Bm
+hoy ese vino presente es la sangre del Señor
+            G      A             D
+que al comulgar me llenan de su amor.
+
+    D                  A                Bm
+Ese pan que sobre la patena ya fue consagrado
+      D                       A                   Bm
+es el cuerpo que viene a entregarnos hoy nuestro Señor
+      D                    A                  Bm
+y la sangre dentro de este cáliz ya no es ese vino
+              G              A              Bm
+se ha transformado en rica bebida de la salvación.
+
+      D                  A                   Bm
+En la mesa han traído el centro de la Eucaristía
+      D                    A                 Bm
+es el cuerpo y también la sangre de nuestro Señor
+     D                   A                   Bm
+comulguemos de su cuerpo santo y su sangre divina
+     G             A                Bm
+bendecidos y purificados hoy en el altar.
+
+          G        A        F#m         Bm
+Veo en el pan claramente el rostro de Jesús
+         G     A           D  D7
+el me da paz y vida a plenitud
+        G       A           F#m          Bm
+hoy ese vino presente es la sangre del señor
+            G      A             D
+que al comulgar me llenan de su amor.
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+<!-- CANCIÓN 1 -->
+<div class="card mb-4 shadow-lg">
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+<button class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#song7">
+🎵 Salida
+</button>
+</h2>
+
+<div id="song7" class="accordion-collapse collapse"
+     data-bs-parent="#accordionSongs">
+<div class="accordion-body">
+
+<pre class="song-box">
+                 C
+Te doy gracias Jesús
+                  Am
+Por haberte encontrado
+               F     G7
+Por haberme salvado
+                  C
+Te doy gracias Jesús.
+
+(CORO)
+
+C
+Hoy ya se el camino
+                Am
+Y hacia el me dirijo
+               F
+Es la senda bendita
+                   G7
+Que representa el hijo
+
+(CORO)
+
+C
+Mi amor era pequeño
+                   Am
+Pero ya lo he encontrado
+               F
+Y ese pequeño amor
+                G7
+Hoy se ha agigantado
+
+(CORO)
+
+C
+Hoy Jesús es mi guía
+               Am
+El controla mi vida
+              F
+No hay ser terreno
+              G7
+Que mi cariño mida
+
+(CORO)
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+<!-- CANCIÓN 1 -->
+<div class="card mb-4 shadow-lg">
+<div class="accordion-item">
+
+<h2 class="accordion-header">
+<button class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#song8">
+🎵 Madre Eres Ternura
+</button>
+</h2>
+
+<div id="song8" class="accordion-collapse collapse"
+     data-bs-parent="#accordionSongs">
+<div class="accordion-body">
+
+<pre class="song-box">
+D            Em
+Madre eres ternura
+A7         D
+Eres una flor
+Bm         Em
+Blanca y preciosa
+A7        D
+Llena de amor (2)
+
+D      Em
+Si, Señora ven a mi
+A7         D
+Ven, ven a mi
+  Bm            Em
+Cúbreme con tu manto
+ A7       D
+Lleno de amor 
+</pre>
+
+</div>
+</div>
+</div>
+</div>
+<!-- hasta aqui colocas canciones -->
+</div>
+</div>
+</div>
 </section>
 
 <footer>
-    © 2026 Forjadores de Fe
+© 2026 Forjadores de Fe
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
